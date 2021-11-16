@@ -1,0 +1,14 @@
+===============================================================================
+Searching for the 'personnel' database		ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+. . . 
+. . . 
+[ OK ]
+Checking tables
+	'address' found.
+	'person' found.
+	'phone' found.
+Checking column names				[ OK ]
+Checking structure of the 'person' table	[ OK ]
+Checking structure of the 'address' table	[ OK ]
+Checking structure of the 'phone' table		[ OK ]
+===============================================================================

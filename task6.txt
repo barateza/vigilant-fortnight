@@ -1,0 +1,24 @@
+mysql> SELECT CONCAT (person.first_name, " ",person.last_name) AS person, phone.phone_number
+    -> FROM person, phone
+    -> WHERE person.id = phone.person_id AND phone.type='mobile';
++------------------+-----------------+
+| person           | phone_number    |
++------------------+-----------------+
+| Victoria Pollard | +1 202 123 4567 |
+| Emily Howard     | +1 214 991 2385 |
+| David Thomas     | +1 201 465 4878 |
++------------------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT CONCAT (person.first_name, " ",person.last_name) AS person, address.street, address.building, address.apartment, phone.phone_number FROM person
+    -> LEFT JOIN address ON person.id = address.person_id
+    -> LEFT JOIN phone ON person.id = phone.person_id
+    -> WHERE address.street="Lucas St" AND address.type=phone.type;
++------------------+----------+----------+-----------+-----------------+
+| person           | street   | building | apartment | phone_number    |
++------------------+----------+----------+-----------+-----------------+
+| Victoria Pollard | Lucas St | 12       |           | +1 800 555 1234 |
+| David Thomas     | Lucas St | 22       | ap 12     |                 |
++------------------+----------+----------+-----------+-----------------+
+2 rows in set (0.01 sec)
+
